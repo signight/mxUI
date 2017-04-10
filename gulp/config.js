@@ -1,5 +1,6 @@
 /**
  * Created by nightsign on 2017/3/3.
+ * 创建gulp配置文件
  */
 var src = './src';
 var dest = './dist';
