@@ -1,0 +1,14 @@
+/*
+*如果你有一个 SCSS 或 Sass 文件要导入，但不希望将其编译到一个CSS文件，你可以在文件名的开头添加一个下划线。这将告诉Sass不要将其编译到一个
+*正常的CSS文件。然后，在导入语句中却不需要添加下划线。例如，你可能有一个命名为 _colors.scss 的文件，但是不会编译成 _colors.css 文件
+ */
+
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+//@import "custom";
+
+//reset
+@import "normalize";
+// Core CSS
+@import "grid";

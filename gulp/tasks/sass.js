@@ -17,7 +17,7 @@ var gutil = require('gulp-util');
 var config = require('../config').sass;
 
 gulp.task('sasscss', function () {
-    sass(config.srcDir+'/main.scss')
+    sass(config.src)
         .on('error', function (err) {
             console.error('Error!', err.message);
         })
