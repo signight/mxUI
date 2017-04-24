@@ -28,7 +28,6 @@
   @return if($min != 0, $min, null);
 }
 
-
 // Maximum breakpoint width. Null for the largest (last) breakpoint.
 // The maximum value is calculated as the minimum of the next one less 0.1.
 //

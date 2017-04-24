@@ -5,15 +5,313 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Title</title>
     <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/ripples.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <style>
+        .header-panel {
+            background-color: #009587;
+            height: 144px;
+            position: relative;
+            z-index: 3;
+
+        }
+
+        .header-panel div {
+            position: relative;
+            height: 100%;
+        }
+
+        .header-panel h1 {
+            color: #FFF;
+            /* font-size: 20px; */
+            /* font-weight: 400; */
+            position: absolute;
+            bottom: 10px;
+            padding-left: 35px;
+            white-space: nowrap;
+        }
+
+        .menu {
+            overflow: auto;
+            padding: 0;
+        }
+
+        .menu, .menu * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .menu ul {
+            padding: 0;
+            margin: 7px 0;
+        }
+
+        .menu ul li {
+            list-style: none;
+            padding: 20px 0 20px 50px;
+            font-size: 15px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .menu ul li.active {
+            background-color: #dedede;
+            position: relative;
+        }
+
+        .doc-grid div[class*="col"] {
+            background-color: #428bca;
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>heading</h1>
-    <h2>heading</h2>
-    <h3>heading</h3>
-    <h4>heading</h4>
-    <h5>heading</h5>
-    <p>111</p>
-    <div class="display-1">display</div>
-    <input type="text" class="form-control">
+<div class="header-panel ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <h1>项目框架</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-2 menu">
+            <ul>
+                <li class="withripple active">栅格系统</li>
+                <li class="withripple" data-target="#dialog">Dialog</li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <h2>HTML5 文档类型</h2>
+            <pre>
+                <code>
+                    <!DOCTYPE html>
+                    <html lang="zh-CN">
+                      ...
+                    </html>
+                </code>
+            </pre>
+            <h2>移动设备</h2>
+            <p>为了确保适当的绘制和触屏缩放，需要在 &lt;head&gt; 之中添加 viewport 元数据标签。</p>
+            <pre>
+                <code>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                </code>
+            </pre>
+            <h2>栅格系统</h2>
+            <p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。栅格系统的工作原理：</p>
+            <ul>
+                <li>“行（row）”必须包含在 <code>.container</code> （固定宽度）或 <code>.container-fluid</code> （100%
+                    宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+                </li>
+                <li>通过“行（row）”在水平方向创建一组“列（column）”。</li>
+                <li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li>
+                <li>类似 <code>.row</code> 和 <code>.col-sm-4</code> 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin
+                    也可以用来创建语义化的布局。
+                </li>
+                <li>通过为“列（column）”设置 <code>padding</code> 属性，从而创建列与列之间的间隔（gutter）。通过为 <code>.row</code> 元素设置负值 <code>margin</code>
+                    从而抵消掉为 <code>.container</code> 元素设置的 <code>padding</code>，也就间接为“行（row）”所包含的“列（column）”抵消掉了<code>padding</code>。
+                </li>
+                <li>负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</li>
+                <li>栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 <code>.col-sm-4</code> 来创建。</li>
+                <li>如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</li>
+                <li>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 <code>.col-md-*</code>
+                    栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 <code>.col-lg-*</code> 不存在， 也影响大屏幕设备。
+                </li>
+            </ul>
+            <h2>栅格参数</h2>
+            <p>通过下表可以详细查看的栅格系统是如何在多种屏幕设备上工作的。</p>
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-center">
+                        超小屏幕<br>
+                        <small>&lt;576px</small>
+                    </th>
+                    <th class="text-center">
+                        小屏幕<br>
+                        <small>≥576px</small>
+                    </th>
+                    <th class="text-center">
+                        中等屏幕 <br>
+                        <small>≥768px</small>
+                    </th>
+                    <th class="text-center">
+                        大屏幕<br>
+                        <small>≥992px</small>
+                    </th>
+                    <th class="text-center">
+                        超大屏幕<br>
+                        <small>≥1200px</small>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="text-nowrap" scope="row">展现方式</th>
+                    <td>总是水平排列</td>
+                    <td colspan="4">开始是堆叠在一起的，当大于这些阈值时将变为水平排列</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">最大宽度</th>
+                    <td>None (自动)</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">类前缀</th>
+                    <td><code>.col-</code></td>
+                    <td><code>.col-sm-</code></td>
+                    <td><code>.col-md-</code></td>
+                    <td><code>.col-lg-</code></td>
+                    <td><code>.col-xl-</code></td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">列（column）数</th>
+                    <td colspan="5">12</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">槽（gutter）宽</th>
+                    <td colspan="5">30px (15px on each side of a column)</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">可嵌套</th>
+                    <td colspan="5">Yes</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">偏移（Offsets）</th>
+                    <td colspan="5">Yes</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">列排序</th>
+                    <td colspan="5">Yes</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="doc-grid">
+                <div class="row">
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                    <div class="col-md-1">col-md-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">col-md-3</div>
+                    <div class="col-md-3">col-md-3</div>
+                    <div class="col-md-3">col-md-3</div>
+                    <div class="col-md-3">col-md-3</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">col-md-4</div>
+                    <div class="col-md-8">col-md-8</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">col-md-6</div>
+                    <div class="col-md-6">col-md-6</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">col-md-12</div>
+                </div>
+            </div>
+            <h3>列偏移</h3>
+            <div class="doc-grid">
+                <div class="row">
+                    <div class="col-md-4">.col-md-4</div>
+                    <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                </div>
+            </div>
+            <h3>列嵌套</h3>
+            <div class="doc-grid">
+                <div class="row">
+                    <div class="col-md-9">
+                        Level 1: .col-md-9
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-6">
+                                Level 2: .col-xs-8 .col-sm-6
+                            </div>
+                            <div class="col-xs-4 col-sm-6">
+                                Level 2: .col-xs-4 .col-sm-6
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>自适应</h3>
+            <div class="doc-grid">
+                <div class="row">
+                    <div class="col">
+                        1 of 3 (col)
+                    </div>
+                    <div class="col">
+                        2 of 3 (col)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        1 of 3 (col)
+                    </div>
+                    <div class="col">
+                        2 of 3 (col)
+                    </div>
+                    <div class="col">
+                        3 of 3 (col)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        1 of 3
+                    </div>
+                    <div class="col-6">
+                        2 of 3 (col-6)
+                    </div>
+                    <div class="col">
+                        3 of 3
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col">
+                        1 of 3(col)
+                    </div>
+                    <div class="col-md-auto">
+                        内容宽度(col-md-auto)
+                    </div>
+                    <div class="col col-md-2">
+                        3 of 3(col-md-2)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+        <script src="dist/js/material.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script>
+            $.material.init();
+        </script>
 </body>
 </html>
