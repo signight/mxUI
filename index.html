@@ -5,71 +5,9 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Title</title>
     <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/document.css">
     <link rel="stylesheet" href="dist/css/ripples.min.css">
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <style>
-        .header-panel {
-            background-color: #009587;
-            height: 144px;
-            position: relative;
-            z-index: 3;
-
-        }
-
-        .header-panel div {
-            position: relative;
-            height: 100%;
-        }
-
-        .header-panel h1 {
-            color: #FFF;
-            /* font-size: 20px; */
-            /* font-weight: 400; */
-            position: absolute;
-            bottom: 10px;
-            padding-left: 35px;
-            white-space: nowrap;
-        }
-
-        .menu {
-            overflow: auto;
-            padding: 0;
-        }
-
-        .menu, .menu * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        .menu ul {
-            padding: 0;
-            margin: 7px 0;
-        }
-
-        .menu ul li {
-            list-style: none;
-            padding: 20px 0 20px 50px;
-            font-size: 15px;
-            font-weight: normal;
-            cursor: pointer;
-        }
-
-        .menu ul li.active {
-            background-color: #dedede;
-            position: relative;
-        }
-
-        .doc-grid div[class*="col"] {
-            background-color: #428bca;
-            padding-top: .75rem;
-            padding-bottom: .75rem;
-            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
-            color: #fff;
-            text-align: center;
-        }
-    </style>
+    <script src="dist/js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 <div class="header-panel ">
@@ -85,8 +23,13 @@
     <div class="row">
         <div class="col-2 menu">
             <ul>
-                <li class="withripple active">栅格系统</li>
-                <li class="withripple" data-target="#dialog">Dialog</li>
+                <li class="withripple active"><a href="index.html">栅格系统</a></li>
+                <li class="withripple" data-target="#media"><a href="media.html">媒体对象</a></li>
+                <li class="withripple" data-target="#type"><a href="type.html">排版</a></li>
+                <li class="withripple" data-target="#utilities"><a href="utilities.html">布局小组件</a></li>
+                <li class="withripple" data-target="#images"><a href="images.html">图片</a></li>
+                <li class="withripple" data-target="#table"><a href="tables.html">表格</a></li>
+                <li class="withripple" data-target="#alerts"><a href="alerts.html">表格</a></li>
             </ul>
         </div>
         <div class="col-10">

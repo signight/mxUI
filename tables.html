@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/document.css">
+    <link rel="stylesheet" href="dist/css/ripples.min.css">
+    <script src="dist/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="header-panel ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <h1>项目框架</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-2 menu">
+            <ul>
+                <li class="withripple"><a href="index.html">栅格系统</a></li>
+                <li class="withripple active" data-target="#media"><a href="media.html">媒体对象</a></li>
+                <li class="withripple active" data-target="#utilities"><a href="utilities.html">布局组件</a></li>
+                <li class="withripple" data-target="#type"><a href="type.html">排版</a></li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <h2>表格</h2>
+            <h3>基础表格</h3>
+            <p>在表格上添加 <code>.table</code>即可获得基础样式</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>追加<code>.table-striped</code>可获得交替条纹效果</p>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>添加 <code>.table-bordered</code>可以为表格添加边框</p>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@TwBootstrap</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>添加 <code>.table-hover</code>以增加鼠标浮动效果</p>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>添加 <code>.table-sm</code>缩小表格内间距</p>
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>添加 <code>.table-responsive</code>已增加表格的响应式效果，宽度过窄时会添加横向滚动效果。</p>
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                    <th>Table heading</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
+        <script src="dist/js/material.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+            $.material.init();
+        </script>
+</body>
+</html>

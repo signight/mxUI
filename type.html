@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/document.css">
+    <link rel="stylesheet" href="dist/css/ripples.min.css">
+    <script src="dist/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="header-panel ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <h1>项目框架</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-2 menu">
+            <ul>
+                <li class="withripple "><a href="index.html">栅格系统</a></li>
+                <li class="withripple active" data-target="#dialog"><a href="type.html">排版</a></li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <h2>排版</h2>
+            <h3>标题</h3>
+            <p>所有标题标签，<code> &lt;h1&gt; 到 &lt;h6&gt; </code>均可使用。另外，还提供了 .h1 到 .h6 类，为的是给内联（inline）属性的文本赋予标题的样式。</p>
+            <h1>h1.  heading</h1>
+            <h2>h2.  heading</h2>
+            <h3>h3.  heading</h3>
+            <h4>h4.  heading</h4>
+            <h5>h5.  heading</h5>
+            <h6>h6.  heading</h6>
+            <h3>文本属性</h3>
+            <p>以下分别是添加mark、del、s、ins、u、small、strong、em后的效果</p>
+            <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+            <p><del>This line of text is meant to be treated as deleted text.</del></p>
+            <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+            <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+            <p><u>This line of text will render as underlined</u></p>
+            <p><small>This line of text is meant to be treated as fine print.</small></p>
+            <p><strong>This line rendered as bold text.</strong></p>
+            <p><em>This line rendered as italicized text.</em></p>
+            <h3>列表样式</h3>
+            <p>列表添加<code>.list-unstyled</code>后移除默认的list-style样式</p>
+            <ul class="list-unstyled">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipiscing elit</li>
+                <li>Integer molestie lorem at massa</li>
+                <li>Facilisis in pretium nisl aliquet</li>
+                <li>Nulla volutpat aliquam velit
+                    <ul>
+                        <li>Phasellus iaculis neque</li>
+                        <li>Purus sodales ultricies</li>
+                        <li>Vestibulum laoreet porttitor sem</li>
+                        <li>Ac tristique libero volutpat at</li>
+                    </ul>
+                </li>
+                <li>Faucibus porta lacus fringilla vel</li>
+                <li>Aenean sit amet erat nunc</li>
+                <li>Eget porttitor lorem</li>
+            </ul>
+        </div>
+        <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+        <script src="dist/js/material.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script>
+            $.material.init();
+        </script>
+</body>
+</html>

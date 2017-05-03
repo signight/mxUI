@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/document.css">
+    <link rel="stylesheet" href="dist/css/ripples.min.css">
+    <script src="dist/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="header-panel ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <h1>项目框架</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-2 menu">
+            <ul>
+                <li class="withripple"><a href="index.html">栅格系统</a></li>
+                <li class="withripple active" data-target="#media"><a href="media.html">媒体对象</a></li>
+                <li class="withripple active" data-target="#utilities"><a href="utilities.html">布局组件</a></li>
+                <li class="withripple" data-target="#type"><a href="type.html">排版</a></li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <h2>警告</h2>
+            <h3>基础表格</h3>
+            <p>在元件上添加 <code>.alert</code>和 <code>alert-success</code><code>alert-info</code>
+                <code>alert-warning</code><code>alert-success</code>即可获得基础样式</p>
+            <p>在元件内的链接添加 <code>.alert-link</code>样式即可给予链接获得相应样式</p>
+            <div class="alert alert-success" role="alert">
+                <strong>Lorem ipsum dolor </strong>sit amet, consectetur. <a href="#" class="alert-link">message</a>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <strong>Lorem ipsum dolor </strong>sit amet, consectetur. <a href="#" class="alert-link">message</a>
+            </div>
+            <div class="alert alert-warning" role="alert">
+                <strong>Lorem ipsum dolor </strong>sit amet, consectetur. <a href="#" class="alert-link">message</a>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <strong>Lorem ipsum dolor </strong>sit amet, consectetur. <a href="#" class="alert-link">message</a>
+            </div>
+            <p>加载 <strong>alert javascript plugin</strong>插件,通过此插件可以为警告信息添加点击并消失的功能。</p>
+            <p>当使用 <code>.close</code> 按钮时，它必须是 <code>.alert-dismissible</code> 的第一个子元素，并且在它之前不能有任何文本内容。</p>
+            <p>为关闭按钮添加 <code>data-dismiss="alert"</code> 属性就可以使其自动为警告框赋予关闭功能。关闭警告框也就是将其从 DOM 中删除。</p>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            </div>
+            <code>$().alert()</code>
+            <p>让警告框监听具有 <code>data-dismiss="alert"</code> 属性的后裔元素的点击（click）事件。（如果是通过 data 属性进行的初始化则无需使用）</p>
+            <code>$().alert('close')</code>
+            <p>关闭警告框并从 DOM 中将其删除。如果警告框被赋予了 <code>.fade</code> 和 <code>.in</code> 类，那么，警告框在淡出之后才会被删除。</p>
+        </div>
+        <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+        <script src="dist/js/main.min.js"></script>
+        <script src="dist/js/material.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+            $.material.init();
+        </script>
+</body>
+</html>
